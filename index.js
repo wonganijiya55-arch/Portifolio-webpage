@@ -10,3 +10,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   menu.addEventListener('click', () => {
     navLinks.classList.toggle('open');
   });
+  //End of initial javascript//
+//Start of curriculum vitae js file//
+

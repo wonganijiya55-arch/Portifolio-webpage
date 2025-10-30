@@ -312,5 +312,75 @@ box-shadow: #121433 0px 4px 6px -1px, #121433 0px 2px 4px -1px;
   padding-left:20px;
   text-align: inherit;
 }
+.web p,.civil p,#skills h2,.exp-proj h2,.education h2,.professional-summary h2{
+    color: #00d4ff;
+}
 /*end of skills section*/
- /* start of cv-header section*/
+/* start of cv-header section*/
+/* Style for the entire CV header */
+#cv-header{
+  text-align: center;
+  padding: 20px;
+}
+/* Make Curriculum Vitae title appear at the top */
+#cv-header h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+   color: #00d4ff;
+  text-align: center;
+}
+
+/* This div will hold the image and the text side-by-side */
+.cv-headerdiv {
+  display: flex;
+  align-items: center;     /* Vertically center image and text */
+  justify-content:space-between; /* Center the whole group horizontally */
+  flex-wrap: nowrap;         /* Wrap for smaller screens */
+  border-radius: 5%;
+  gap:1rem;
+
+}
+
+/* Image section */
+.cv-header-intro img.cv-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #06086b;
+  align-items: flex-start;
+}
+.ch-header-intro{
+  background: var(--glass);
+  box-shadow: #121433 0px 4px 6px -1px, #121433 0px 2px 4px -1px;
+  border-radius: 5%;
+}
+
+/* Text section */
+.cv-header-text {
+  text-align: left;
+    box-shadow: #121433 0px 4px 6px -1px, #121433 0px 2px 4px -1px;
+    background: var(--glass);
+    border-radius: 5%;
+    padding: 10px;
+    text-align: center;
+}
+
+.cv-header-text h1 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #00d4ff;
+}
+
+.cv-header-text ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display:inline-block;
+}
+
+.cv-header-text,li {
+  margin-left: auto;
+  font-size: 1rem;
+  color:#fff;
+}
