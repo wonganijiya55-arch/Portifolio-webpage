@@ -110,6 +110,7 @@ footer {
   --card-blue: #121433;   /* card / section */
   --muted: #e6e9f2;
   --color: #00d4ff;
+  --accent: #00d4ff;      /* headings accent color */
   --glass: rgba(255,255,255,0.04);
   --radius: 12px;
   --max-width: 920px;
@@ -123,6 +124,10 @@ body{
   color: var(--muted);
   -webkit-font-smoothing:antialiased;
   font-size: medium;
+}
+/* Account for fixed navbar on content pages */
+.resume-page .resume-container, .cv-page .cv-container {
+  margin-top: 100px;
 }
 /*about-section*/
 #about{
@@ -234,14 +239,28 @@ body{
   box-shadow: 0 18px 60px rgba(0,0,0,0.6);
   color: #eaf0ff;
 }
+.resume-actions{ margin-left:auto; }
+.resume-actions .btn{ padding:8px 14px; font-size:0.9rem; }
+.resume-grid{ display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 768px){
+  .resume-grid{ grid-template-columns: 1fr 1fr; }
+}
 
 /* Header */
 .cv-header, .resume-header{
   display:flex;
   gap:18px;
-  align-items:center;
-  margin-bottom:18px;
+  align-items:flex-start;
+  margin-bottom:22px;
 }
+.cv-headerdiv{
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  gap:22px;
+}
+.cv-header-intro{ flex:0 0 auto; }
+.cv-header-text{ flex:1 1 0; max-width: 100%; }
 
 .cv-photo{
   width:96px;
@@ -254,15 +273,34 @@ body{
 /* Section headings */
 .cv-container h2, .resume-container h2{
   color: var(--accent);
-  margin: 10px 0 8px;
-  font-size:1.05rem;
+  margin: 16px 0 10px;
+  font-size:1.2rem;
+  letter-spacing:0.2px;
 }
+.resume-header h1{
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+.resume-header p{ margin: 2px 0; color:#cfd7ff; }
 
 /* Lists and paragraphs */
 .cv-container p, .resume-container p, .cv-container li{
   color: #d9e1ff;
-  line-height:1.5;
+  line-height:1.6;
 }
+.resume-container ul{
+  padding-left: 18px;
+  margin: 6px 0 10px;
+}
+.resume-container li{
+  margin-bottom: 6px;
+}
+.resume-container section{
+  padding: 10px 0 6px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.resume-container section:first-of-type{ border-top: none; }
 
 /* Footer small */
 .cv-footer, .resume-footer{
@@ -272,6 +310,8 @@ body{
   font-size:0.9rem;
   opacity:0.9;
 }
+.download-actions{ margin-top:14px; display:flex; justify-content:center; }
+.download-actions .btn{ padding:10px 18px; }
 
 /* Print friendly tweaks (useful if user prints CV or saves as PDF) */
 @media print {
@@ -279,6 +319,8 @@ body{
   .cv-container, .resume-container{ box-shadow:none; background:transparent; border-radius:0; padding:0; }
   .profile-photo, .cv-photo{ display:none; }
   .btn, .cta-buttons { display:none; }
+  .resume-container section{ border-top: none; }
+  .resume-grid{ display:block; }
 }
 
 /* Responsive */
@@ -286,6 +328,10 @@ body{
   .profile-card{ padding:20px; }
   .profile-photo{ width:100px; height:100px; }
   .cv-header{ flex-direction:column; align-items:flex-start; gap:10px; }
+  .cv-headerdiv{ flex-direction:column; align-items:flex-start; }
+  .resume-header{ flex-direction:column; }
+  .resume-header h1{ font-size:1.4rem; }
+  .cv-container, .resume-container{ padding:22px; }
 }
  /*CV CSS*/
  /*skills section*/
