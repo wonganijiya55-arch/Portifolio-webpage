@@ -73,15 +73,17 @@ body {
     right: 0;
     width: 200px;
     height: 0;
-    overflow: hidden;
+    max-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background: rgba(15, 15, 15, 0.95);
     flex-direction: column;
     align-items: center;
-    transition: height 0.3s ease;
+    transition: max-height 0.3s ease;
   }
 
   .nav-links.open {
-    height: 180px;
+    max-height: 60vh; /* allow scrolling on small screens */
   }
 
   .nav-links li {
